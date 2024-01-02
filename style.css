@@ -1,0 +1,46 @@
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 10px;
+    color:#fff;
+}
+
+body{
+    padding:0 20px;
+    box-sizing: border-box;
+    background-color: rgb(16,17,18);
+}
+header{
+    color:rgb(251,0,71);
+    font-weight: 800;
+    padding:200;
+    font-size: 3rem;
+    padding:20px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between
+}
+.searchWrap{
+    display: flex;
+    align-items: center;
+}
+.searchIcon{
+    font-size: 3rem;
+}
+.searchBox{
+    display: none;
+    width:200px;
+    height: 50px;
+    border: 1px solid #fff;
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+section  *{
+    font-size: 2rem;;
+
+}
+.introduce{
+    height:400px;
+}
+
