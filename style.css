@@ -13,44 +13,12 @@ body {
   margin: 0 auto;
 }
 
-header {
-  padding: 200;
-  padding: 20px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #fff;
-}
-.logo {
-  cursor: pointer;
-  color: rgb(255, 80, 149);
-  font-weight: 800;
-  font-size: 3rem;
-}
-
-.searchWrap {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  height: 50px;
-  box-sizing: border-box;
-}
-.searchIcon {
-  font-size: 3rem;
-}
-
-.searchBox {
-  padding: 10px;
-  box-sizing: border-box;
-  border: 0;
-  width: 0px;
-  height: 50px;
+section * {
   font-size: 2rem;
-  margin-right: 10px;
-  background-color: transparent;
-  transition:
-    width 0.5s,
-    height 0.5s;
+}
+
+svg {
+  pointer-events: none;
 }
 
 input::-webkit-input-placeholder {
@@ -69,6 +37,48 @@ textarea:-ms-input-placeholder {
   color: #ededed;
   opacity: 0.7;
 }
+
+header {
+  padding: 200;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+
+/* 로고 */
+.logo {
+  cursor: pointer;
+  color: rgb(255, 80, 149);
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+/* 검색 */
+.searchWrap {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50px;
+  box-sizing: border-box;
+}
+.searchIcon {
+  font-size: 3rem;
+}
+.searchBox {
+  padding: 10px;
+  box-sizing: border-box;
+  border: 0;
+  width: 0px;
+  height: 50px;
+  font-size: 2rem;
+  margin-right: 10px;
+  background-color: transparent;
+  transition:
+    width 0.5s,
+    height 0.5s;
+}
 .searchBox.large {
   transition:
     width 0.5s,
@@ -78,7 +88,6 @@ textarea:-ms-input-placeholder {
   width: 200px;
   height: 50px;
 }
-
 .searchIconWrap {
   width: 50px;
   height: 50px;
@@ -87,9 +96,7 @@ textarea:-ms-input-placeholder {
   align-items: center;
 }
 
-section * {
-  font-size: 2rem;
-}
+/* 인트로 페이지 */
 
 .introduce {
   height: 400px;
@@ -114,22 +121,13 @@ section * {
   width: 100%;
 }
 
-.main2 .block p {
-  font-size: 2rem;
-}
+/* 카드 스타일 */
 
-svg {
-  pointer-events: none;
-}
-
-.searchList {
-  display: flex;
-  flex-wrap: wrap;
-}
 .rankedList {
   display: none;
   flex-wrap: wrap;
 }
+
 .cardWrap {
   width: 25%;
   padding: 20px;
@@ -173,6 +171,12 @@ svg {
   display: flex;
 }
 
+/* 검색페이지 */
+
+.searchList {
+  display: flex;
+  flex-wrap: wrap;
+}
 .noSearch {
   text-align: center;
 
@@ -195,6 +199,8 @@ svg {
 .char2 > img {
   width: 100%;
 }
+
+/* 로딩 */
 
 .loading {
   display: flex;
