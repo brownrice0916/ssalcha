@@ -1,73 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@200;400;500&display=swap" rel="stylesheet">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@200;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <title>영화검색사이트</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        SSALCHA
-        <div class="searchWrap">
-            <input class="searchBox" placeholder="영화 제목 검색"></input>  
-            <div class="searchIconWrap"><svg class="searchIcon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search-heart-fill" viewBox="0 0 16 16">
-                <path d="M6.5 13a6.474 6.474 0 0 0 3.845-1.258h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.008 1.008 0 0 0-.115-.1A6.471 6.471 0 0 0 13 6.5 6.502 6.502 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13Zm0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
-            </svg>
-            </div>
+      <p class="logo">SSALCHA</p>
+      <div class="searchWrap">
+        <input class="searchBox" placeholder="영화 제목 검색" />
+        <div class="searchIconWrap">
+          <svg
+            class="searchIcon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-search-heart-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 13a6.474 6.474 0 0 0 3.845-1.258h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.008 1.008 0 0 0-.115-.1A6.471 6.471 0 0 0 13 6.5 6.502 6.502 0 0 0 6.5 0a6.5 6.5 0 1 0 0 13Zm0-8.518c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"
+            />
+          </svg>
         </div>
+      </div>
     </header>
     <section class="introPage">
-        <section class="main">
-            <div class="introduce">
-                <p ><span>SSALCHA</span>에 오신 것을 환영합니다.</p>
-                <div class="char"><img src="img/ssal.PNG"  /></div>
-            </div>
-            
-            <div>       
-            </div>
-        </section>
-        <section class="section1">
-
-                <p>SSALCHA 최고 영화 콜렉션</p>
-                <div class="rankedList">
-                    <div class="cardWrap originalCard">
-                        <div class="card text-bg-dark">
-                            <img src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg" class="card-img" alt="...">
-                            <div class="card-img-overlay">
-                              <h5 class="card-title">Card title</h5>
-                              <div class="cardTextWrap">
-                              <p class="card-text overview">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <div class="rateWrap">
-                              <span>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-                                  </svg>
-                                  :&nbsp;
-                            </span>
-                              <p class="card-text rate"></p>
-                            </div>
-                        
-                            </div>
-                          </div>
-                        </div>
-                        </div>
-
-                </div>
-
-        </section>
-    </section>
-    <sector class="section2">
-        <div class="searchList">
-            
+      <section class="main">
+        <div class="introduce">
+          <p><span>SSALCHA</span>에 오신 것을 환영합니다.</p>
+          <div class="char"><img src="img/ssal.PNG" /></div>
         </div>
-        <p class="noSearch">검색 결과가 없습니다.</p>
+      </section>
+      <section class="section1">
+        <p>SSALCHA 최고 영화 콜렉션</p>
+        <div class="rankedList">
+          <div class="cardWrap">
+            <div class="card text-bg-dark">
+              <img
+                src="https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay">
+                <h5 class="card-title">Card title</h5>
+                <div class="cardTextWrap">
+                  <p class="card-text overview">
+                    This is a wider card with supporting text below as a natural
+                    lead-in to additional content. This content is a little bit
+                    longer.
+                  </p>
+                  <div class="rateWrap">
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-star-fill"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        />
+                      </svg>
+                      <!-- :&nbsp; -->
+                    </span>
+                    <p class="card-text rate"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <sector class="searchPage">
+      <div class="searchList"></div>
+      <div class="noSearch">
+        <p>검색 결과가 없습니다.</p>
+        <div class="char2"><img src="img/ssal_embarrass.png" /></div>
+      </div>
     </sector>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
