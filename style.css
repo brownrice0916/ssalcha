@@ -22,6 +22,7 @@ header {
   border-bottom: 1px solid #fff;
 }
 .logo {
+  cursor: pointer;
   color: rgb(255, 80, 149);
   font-weight: 800;
   font-size: 3rem;
@@ -89,6 +90,7 @@ textarea:-ms-input-placeholder {
 section * {
   font-size: 2rem;
 }
+
 .introduce {
   height: 400px;
   margin-top: 25px;
@@ -125,7 +127,7 @@ svg {
   flex-wrap: wrap;
 }
 .rankedList {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
 }
 .cardWrap {
@@ -192,4 +194,10 @@ svg {
 }
 .char2 > img {
   width: 100%;
+}
+
+.loading {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
 }

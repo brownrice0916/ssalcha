@@ -1,32 +1,28 @@
+//mode를 intro와 search로 설정한다.
+let mode = 'intro'
+
 //돋보기버튼에 클릭 이벤트 추가
 let searchIcon = document.querySelector('.searchIconWrap')
 let searchInput = document.querySelector('.searchBox')
 
 let searchClickFunction = (searchIcon, searchInput) => {
   document.addEventListener('click', function (event) {
-    if (event.target === searchIcon) {
-      searchInput.classList.add('large')
-    } else if (event.target !== searchIcon) {
-      if (event.target !== searchInput) {
-        searchInput.classList.remove('large')
+    if (mode == 'intro') {
+      if (event.target === searchIcon) {
+        searchInput.classList.add('large')
+      } else if (event.target !== searchIcon) {
+        if (event.target !== searchInput) {
+          searchInput.classList.remove('large')
+        } else {
+        }
       } else {
+        searchInput.classList.remove('large')
       }
-    } else {
-      searchInput.classList.remove('large')
     }
   })
 }
 
-let searchEnterFunction = (searchInput) => {
-  searchInput.addEventListener('keydown', function (event) {
-    if (event.keyCode === 13) {
-      console.log('엔터쳤을 때도 되게 하려고')
-    }
-  })
-}
-
-//영화 리스트 리턴할 함수
-
+//영화 리스트 받아옴
 let movieList
 
 let getMovieList = () => {
@@ -38,7 +34,6 @@ let getMovieList = () => {
         'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmFhNmQ3OGMyZTE3YTI2YjYwZDcwOTkzMGViNDNjMiIsInN1YiI6IjY1OTNiM2NmMWNhYzhjNjQ0MTBjNWI1OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.JIOacGXuT6LSQZhWNAMCDWkXHNu0nTlGotza_BqOk8M',
     },
   }
-
   fetch(
     'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1',
     options
@@ -48,7 +43,13 @@ let getMovieList = () => {
       ///받아온 결과를 저장
       movieList = response.results
       let rankedList = document.querySelector('.rankedList')
+      //결과 받아오자마자 한번 뿌려주기
       makeMovieList(rankedList, movieList)
+      //로딩제거
+      let loading = document.querySelector('.loading')
+      let list = document.querySelector('.rankedList')
+      loading.style.display = 'none'
+      list.style.display = 'flex'
     })
     .catch((err) => console.error(err))
 }
@@ -61,7 +62,7 @@ let makeMovieList = (moviesWrap, movies, search) => {
   movies.forEach((element) => {
     let copiedDiv = originalCard.cloneNode(true)
     copiedDiv.addEventListener('click', () => {
-      alert('영화 ID' + element.id)
+      alert('영화 ID : ' + element.id)
     })
     let movieImg = 'https://image.tmdb.org/t/p/w500' + element.poster_path
     let cardTitle = copiedDiv.querySelector('.card-title')
@@ -80,6 +81,8 @@ let makeMovieList = (moviesWrap, movies, search) => {
   }
 }
 
+//Input 입력값이 바뀔 때마다 일어나는 이벤트
+
 let addInputFunction = () => {
   searchInput.addEventListener('input', function (event) {
     let inputValue = event.target.value
@@ -91,6 +94,7 @@ let addInputFunction = () => {
 
     //검색창에 무언가 입력했을 때
     if (inputValue !== '') {
+      mode = 'search'
       searchPage.style.display = 'block' //검색페이지 보여주고
       intro.style.display = 'none' //인트로는 닫는다
       //새로운 영화 배열을 만들기 위해 기존의 것을 복사함
@@ -111,12 +115,29 @@ let addInputFunction = () => {
       }
       //검색창에 아무것도 입력하지 않았을 때
     } else {
+      mode = 'intro'
       intro.style.display = 'block'
       searchPage.style.display = 'none'
     }
   })
 }
 
+//logo에도 클릭이벤트 추가
+
+let addLogoClickEvent = () => {
+  let logo = document.querySelector('.logo')
+  logo.addEventListener('click', () => {
+    let intro = document.querySelector('.introPage')
+    let searchPage = document.querySelector('.searchPage')
+    intro.style.display = 'block'
+    searchPage.style.display = 'none'
+    searchInput.value = ''
+    searchInput.classList.remove('.large')
+    mode = 'intro'
+  })
+}
+
 getMovieList()
 searchClickFunction(searchIcon, searchInput)
 addInputFunction()
+addLogoClickEvent()
