@@ -67,10 +67,10 @@ header {
   font-size: 3rem;
 }
 .searchBox {
-  padding: 10px;
+  padding: 0;
   box-sizing: border-box;
   border: 0;
-  width: 0px;
+  width: 1px;
   height: 50px;
   font-size: 2rem;
   margin-right: 10px;
@@ -80,6 +80,7 @@ header {
     height 0.5s;
 }
 .searchBox.large {
+  padding: 10px;
   transition:
     width 0.5s,
     height 0.5s;
@@ -206,4 +207,117 @@ header {
   display: flex;
   margin: 0 auto;
   margin-top: 50px;
+}
+
+/* chat gpt */
+.floatingArea {
+  position: fixed;
+  display: flex;
+  /* padding: 14px 19px; */
+  /* align-items: center; */
+  align-items: flex-end;
+  right: 18px; /*부모의 50%*/
+  bottom: 72px;
+  /* background-color: white; */
+  border-radius: 24px;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#floatingButton:hover {
+  box-shadow:
+    0 0 0 1px transparent,
+    0 0 0 4px transparent,
+    0 6px 16px rgba(0, 0, 0, 0.12) !important; /*그림자가 세개지만 마지막것만 표시된다.*/
+  transform: scale(1.04);
+}
+
+#floatingButton {
+  width: 56px;
+  height: 56px;
+  border-radius: 20px;
+  background-color: rgb(255, 80, 149);
+  border: 0px;
+  box-shadow: transparent 0px 0px 0px;
+}
+
+.chatbot {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.chatbot > span {
+  margin-right: 10px;
+}
+.chatbot > span > img {
+  width: 30px;
+  height: 30px;
+}
+
+.chatContainer {
+  width: 360px;
+  height: 690px;
+  background-color: #fff;
+  color: #333;
+  border-radius: 30px;
+  position: relative;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+.chatContainer.remove {
+  display: none !important;
+}
+.chat_title {
+  border-radius: 30px 30px 0 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem !important;
+  color: #fff !important;
+  background-color: rgb(255, 80, 149);
+}
+
+.chatContainer * {
+  color: #333;
+  font-size: 1.5rem;
+}
+#chat-messages {
+  padding: 20px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column-reverse;
+  max-height: 550px;
+  overflow-y: scroll;
+}
+
+#user-input {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#user-input > input {
+  width: 78%;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: #ededed;
+}
+#user-input button {
+  width: 20%;
+  height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(255, 80, 149);
+  color: #fff !important;
 }
