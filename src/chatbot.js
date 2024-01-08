@@ -1,27 +1,27 @@
 // 채팅 메시지를 표시할 DOM
-const chatMessages = document.querySelector('#chat-messages')
+const chatMessages = document.querySelector('#chat-messages');
 // 사용자 입력 필드
-const userInput = document.querySelector('#user-input input')
+const userInput = document.querySelector('#user-input input');
 // 전송 버튼
-const sendButton = document.querySelector('#user-input button')
+const sendButton = document.querySelector('#user-input button');
 // 발급받은 OpenAI API 키를 변수로 저장
-const apiKey = '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'
+const apiKey = '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';
 // OpenAI API 엔드포인트 주소를 변수로 저장
-const apiEndpoint = 'https://api.openai.com/v1/chat/completions'
+const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
 
 function addMessage(sender, message) {
-  let messageElement = document.createElement('div')
-  let copyChatMsg = document.querySelector('.chatbot').cloneNode(true)
+  let messageElement = document.createElement('div');
+  let copyChatMsg = document.querySelector('.chatbot').cloneNode(true);
   if (sender === '챗봇') {
-    messageElement = copyChatMsg
-    messageElement.querySelector('.chatbot_msg').textContent = message
+    messageElement = copyChatMsg;
+    messageElement.querySelector('.chatbot_msg').textContent = message;
   } else {
-    messageElement.textContent = message
-    messageElement.style.textAlign = 'right'
-    messageElement.style.borderBottom = '1px solid #ccc'
-    messageElement.style.padding = '10px'
+    messageElement.textContent = message;
+    messageElement.style.textAlign = 'right';
+    messageElement.style.borderBottom = '1px solid #ccc';
+    messageElement.style.padding = '10px';
   }
-  chatMessages.prepend(messageElement)
+  chatMessages.prepend(messageElement);
 }
 // ChatGPT API 요청
 async function fetchAIResponse(prompt) {
@@ -48,41 +48,40 @@ async function fetchAIResponse(prompt) {
       presence_penalty: 0.5, // 동일한 단어나 구문이 반복되는 것을 억제하는 정도
       stop: ['Human'], // 생성된 텍스트에서 종료 구문을 설정
     }),
-  }
+  };
   // API 요청후 응답 처리
   try {
-    const response = await fetch(apiEndpoint, requestOptions)
-    const data = await response.json()
-    const aiResponse = data.choices[0].message.content
-    return aiResponse
+    const response = await fetch(apiEndpoint, requestOptions);
+    const data = await response.json();
+    const aiResponse = data.choices[0].message.content;
+    return aiResponse;
   } catch (error) {
-    console.error('OpenAI API 호출 중 오류 발생:', error)
-    return 'OpenAI API 호출 중 오류 발생'
+    console.error('OpenAI API 호출 중 오류 발생:', error);
+    return 'OpenAI API 호출 중 오류 발생';
   }
 }
 // 전송 버튼 클릭 이벤트 처리
 sendButton.addEventListener('click', async () => {
   // 사용자가 입력한 메시지
-  const message = userInput.value.trim()
+  const message = userInput.value.trim();
   // 메시지가 비어있으면 리턴
-  if (message.length === 0) return
+  if (message.length === 0) return;
   // 사용자 메시지 화면에 추가
-  addMessage('나', message)
-  userInput.value = ''
+  addMessage('나', message);
+  userInput.value = '';
   //ChatGPT API 요청후 답변을 화면에 추가
-  const aiResponse = await fetchAIResponse(message)
-  addMessage('챗봇', aiResponse)
-})
+  const aiResponse = await fetchAIResponse(message);
+  addMessage('챗봇', aiResponse);
+});
 // 사용자 입력 필드에서 Enter 키 이벤트를 처리
 userInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
-    sendButton.click()
+    sendButton.click();
   }
-})
+});
 
-let floatingButton = document.querySelector('#floatingButton')
-let chatContainer = document.querySelector('.chatContainer')
+let floatingButton = document.querySelector('#floatingButton');
+let chatContainer = document.querySelector('.chatContainer');
 floatingButton.addEventListener('click', () => {
-  console.log(chatContainer)
-  chatContainer.classList.toggle('remove')
-})
+  chatContainer.classList.toggle('remove');
+});

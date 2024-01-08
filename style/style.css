@@ -4,12 +4,16 @@
   font-size: 10px;
   color: #fff;
 }
+:root {
+  --main-color: rgb(255, 80, 149);
+  --main-black: rgb(16, 17, 18);
+}
 
 body {
   padding: 0 40px;
   box-sizing: border-box;
-  background-color: rgb(16, 17, 18);
-  max-width: 1500px;
+  background-color: var(--main-black);
+  /* max-width: 1500px; */
   margin: 0 auto;
 }
 
@@ -50,7 +54,7 @@ header {
 /* 로고 */
 .logo {
   cursor: pointer;
-  color: rgb(255, 80, 149);
+  color: var(--main-color);
   font-weight: 800;
   font-size: 3rem;
 }
@@ -90,6 +94,8 @@ header {
   height: 50px;
 }
 .searchIconWrap {
+  background-color: transparent;
+  border: 0;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -125,18 +131,18 @@ header {
 /* 카드 스타일 */
 
 .rankedList {
-  display: none;
-  flex-wrap: wrap;
-}
-
-.cardWrap {
-  width: 25%;
-  padding: 20px;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  list-style: none;
 }
 
 .card {
   transition: transform 0.3s;
+  cursor: pointer;
+  margin: 20px;
+
+  width: 300px;
+  justify-self: center;
   cursor: pointer;
 }
 .card:hover {
@@ -204,7 +210,8 @@ header {
 /* 로딩 */
 
 .loading {
-  display: flex;
+  display: none;
+  /* display: flex; */
   margin: 0 auto;
   margin-top: 50px;
 }
@@ -242,7 +249,7 @@ header {
   width: 56px;
   height: 56px;
   border-radius: 20px;
-  background-color: rgb(255, 80, 149);
+  background-color: var(--main-color);
   border: 0px;
   box-shadow: transparent 0px 0px 0px;
 }
@@ -281,7 +288,7 @@ header {
   align-items: center;
   font-size: 2rem !important;
   color: #fff !important;
-  background-color: rgb(255, 80, 149);
+  background-color: var(--main-color);
 }
 
 .chatContainer * {
@@ -319,6 +326,6 @@ header {
   height: 30px;
   border-radius: 5px;
   border: 0px;
-  background-color: rgb(255, 80, 149);
+  background-color: var(--main-color);
   color: #fff !important;
 }
