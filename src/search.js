@@ -2,7 +2,7 @@ import { setPageMode } from './main.js';
 export const handleSearch = () => {
   const searchInput = document.querySelector('.searchBox');
   searchInput.addEventListener('input', function (event) {
-    let noSearch = document.querySelector('.noSearch');
+    const noSearch = document.querySelector('.noSearch');
     const movieCards = document.querySelectorAll('.card');
     let cardNum = 0;
     movieCards.forEach((card) => {

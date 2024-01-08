@@ -17,6 +17,13 @@ export const generateMovieCards = async () => {
     return data.results;
   };
 
+  const removeLoading = () => {
+    const loading = document.querySelector('.loading');
+    loading.style.display = 'none';
+  };
+
+  removeLoading();
+
   const movies = await fetchMovieData();
 
   const cardList = document.querySelector('.rankedList');
